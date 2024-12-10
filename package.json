@@ -1,0 +1,75 @@
+{
+  "name": "mymiconseil",
+  "version": "0.0.1",
+  "private": true,
+  "description": "",
+  "homepage": "https://github.com/WildCodeSchool/mymiconseil#readme",
+  "bugs": {
+    "url": "https://github.com/WildCodeSchool/mymiconseil/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WildCodeSchool/mymiconseil.git"
+  },
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "prepare": "husky install",
+    "postinstall": "husky install || true",
+    "lint": "eslint",
+    "db:migrate": "npm run db:migrate --workspace=server",
+    "db:seed": "npm run db:seed --workspace=server",
+    "dev": "concurrently -c green,yellow -t \"HH:mm:ss\" -p \"{name} {time}\" \"npm:dev:*\"",
+    "dev:client": "npm run dev --workspace=client",
+    "dev:server": "npm run dev --workspace=server",
+    "lint-all": "lint-staged",
+    "test": "npm run test --workspaces --if-present",
+    "clean": "cross-env-shell \"rm -rf ./client/node_modules ./server/node_modules ./node_modules ./package-lock.json\""
+  },
+  "keywords": [],
+  "author": "WildCodeSchool",
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.0",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@eslint/js": "^9.16.0",
+    "concurrently": "^9.1.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.15.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jest": "^28.9.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "globals": "^15.12.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.10"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^9.2.0",
+    "@fullcalendar/daygrid": "^6.1.15",
+    "@fullcalendar/interaction": "^6.1.15",
+    "@fullcalendar/react": "^6.1.15",
+    "@fullcalendar/timegrid": "^6.1.15",
+    "@stripe/react-stripe-js": "^3.0.0",
+    "argon2": "^0.41.1",
+    "axios": "^1.7.7",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "glob": "^11.0.0",
+    "google-auth-library": "^9.15.0",
+    "googleapis": "^144.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "prettier": "^3.3.3",
+    "prop-types": "^15.8.1",
+    "react-icons": "^5.3.0",
+    "react-toastify": "^10.0.6",
+    "rimraf": "^6.0.1"
+  }
+}

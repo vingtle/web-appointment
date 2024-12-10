@@ -1,0 +1,147 @@
+#footer {
+  background-color: #012831;
+  padding: 15px 30px;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-content.sticky {
+  padding-right: 30%;
+  padding-top: 2%;
+}
+
+.footer-links {
+  padding-top: 2%;
+}
+
+.footer-copyright {
+  padding-left: 40%;
+  font-size: 0.8em;
+}
+
+.footer,
+h2 {
+  font-size: 1em;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition:
+    color 0.3s ease,
+    border-bottom 0.3s ease;
+}
+
+.footer,
+h2:hover {
+  color: #0891b2;
+}
+
+.footer,
+p {
+  font-size: 0.8em;
+  margin-top: 5%;
+  color: #9ca3af;
+  padding-bottom: 10px;
+}
+
+.footer,
+h3 {
+  font-size: 1em;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition:
+    color 0.3s ease,
+    border-bottom 0.3s ease;
+}
+
+.footer,
+h3:hover {
+  color: #0891b2;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding-top: 2%;
+}
+
+.footer-links li {
+  margin-bottom: 15px;
+}
+
+.footer-icon-text {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.footer-icon {
+  margin-right: 10px;
+  color: #ffffff;
+}
+
+.footer-links p {
+  margin: 0;
+  font-size: 1em;
+}
+
+.footer-links span {
+  font-size: 0.8em;
+  font-weight: 500;
+  color: #9ca3af;
+  cursor: pointer;
+}
+
+.footer-link {
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 0.6em;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer li {
+  margin-bottom: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-icon-text p {
+  font-size: 0.6em;
+  color: #d1d1d1;
+}
+
+.footer-icon-text {
+  display: flex;
+  align-items: center;
+}
+
+.footer h3 {
+  margin-bottom: 10px;
+}
+
+.footer-icon {
+  color: #ffffff;
+  font-size: 65%;
+}
+
+@media screen and (max-width: 1060px) {
+  #footer.footer {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-copyright {
+    padding-left: 0;
+  }
+
+  .footer-links {
+    width: 100%;
+  }
+}

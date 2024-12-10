@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  background-color: #f9f9f9;
+}
+
+#login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+#login-page h2 {
+  font-size: 2rem;
+  color: #0b4553;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+form {
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #1a1a1a;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+input:focus {
+  border-color: #0891b2;
+  outline: none;
+  box-shadow: 0 0 4px rgba(8, 145, 178, 0.3);
+}
+
+#remember-me {
+  display: flex;
+  align-items: center;
+  /* Aligns the checkbox and label vertically */
+  gap: 5px;
+  /* Adds space between the checkbox and label */
+  margin-bottom: 15px;
+}
+
+#remember-me input[type="checkbox"] {
+  width: auto;
+  /* Ensures the checkbox retains its natural size */
+  margin: 0;
+  /* Resets margins to prevent unexpected spacing */
+}
+
+#remember-me label {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #1a1a1a;
+}
+
+.login {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #0891b2;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login:hover {
+  background-color: #065f73;
+}
+
+.google-login,
+.facebook-login {
+  display: flex;
+  align-items: center;
+  /* Aligns logo and text vertically */
+  justify-content: center;
+  /* Centers content */
+  width: 30%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 20px;
+  background-color: #ffffff;
+  color: #0891b2;
+  border: 2px solid #0891b2;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  gap: 10px;
+  /* Space between logo and text */
+}
+
+.login-button img {
+  width: 20px;
+  height: 20px;
+}
+
+.google-login:hover,
+.facebook-login:hover {
+  background-color: #0891b2;
+  color: #ffffff;
+}
+
+.button-logo {
+  width: 20px;
+  /* Adjust as needed */
+  height: 20px;
+}
+
+#signup-link {
+  margin-top: 20px;
+}
+
+#signup-link p {
+  margin-bottom: 10px;
+  color: #1a1a1a;
+}
+
+#signup-link button {
+  width: 120px;
+  background-color: transparent;
+  color: #0891b2;
+  border: 1px solid #0891b2;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#signup-link button:hover {
+  background-color: #0891b2;
+  color: #ffffff;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1060px) {
+  #login-page h2 {
+    font-size: 1.8rem;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  .login {
+    font-size: 0.9rem;
+  }
+
+  #signup-link button {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #login-page h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  form {
+    width: 95%;
+    padding: 20px;
+  }
+
+  input {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+
+  .login {
+    font-size: 0.8rem;
+    padding: 10px;
+  }
+
+  #signup-link button {
+    font-size: 0.75rem;
+    padding: 8px;
+  }
+}

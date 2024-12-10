@@ -1,0 +1,135 @@
+/* Button to open the modal */
+.option-btn {
+  background-color: #0891b2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.option-btn:hover {
+  background-color: #065f73;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal content */
+.modal-content {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Modal heading */
+.modal-content h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #012831;
+}
+
+/* Option item inside the modal */
+.option-item {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: left;
+  background-color: #f9f9f9;
+}
+
+.option-item p {
+  margin: 5px 0;
+  font-size: 0.9em;
+  color: #333;
+}
+
+.option-item .book-btn {
+  display: block;
+  background-color: #0891b2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.option-item .book-btn:hover {
+  background-color: #065f73;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #e53e3e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+  background-color: #c53030;
+}
+
+/* Modal animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+  .modal-content {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .modal-content h3 {
+    font-size: 1.3em;
+  }
+
+  .option-item {
+    font-size: 0.85em;
+  }
+
+  .option-item .book-btn {
+    font-size: 0.9em;
+  }
+}

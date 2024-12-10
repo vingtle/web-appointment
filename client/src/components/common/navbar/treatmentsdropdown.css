@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+#treatments-dropdown {
+  position: relative;
+  display: inline-block;
+  font-family: "Lato", sans-serif;
+}
+
+.treatments-dropdown,
+button:hover {
+  color: #0891b2;
+}
+
+.dropdown-title {
+  cursor: pointer;
+  color: #000;
+  font-weight: 500;
+  background: none;
+  border: none;
+  font-size: 1em;
+}
+
+.dropdown-content {
+  display: block;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px;
+  padding: 10px 0;
+  overflow-y: auto;
+  max-height: 0;
+  opacity: 0;
+  transition:
+    max-height 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.dropdown-content.open {
+  max-height: 300px;
+  opacity: 1;
+}
+
+.dropdown-content div {
+  padding: 12px 16px;
+  color: #0891b2;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.dropdown-content div:hover {
+  background-color: #f1f1f1;
+  color: #065f73;
+}
+
+.dropdown-content div:focus {
+  outline: 2px solid #0891b2;
+  background-color: #e0f7fa;
+}
+
+.dropdown-content div:focus-visible {
+  outline: 2px solid #ff7f50;
+  background-color: #ffe4c4;
+}
+
+@media (max-width: 600px) {
+  #treatments-dropdown {
+    width: 100%;
+  }
+
+  .dropdown-title {
+    font-size: 1.2em;
+    text-align: center;
+    padding: 12px;
+  }
+
+  .dropdown-content {
+    min-width: 100%;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+    padding: 5px 0;
+  }
+
+  .dropdown-content div {
+    text-align: center;
+    padding: 16px;
+    font-size: 1em;
+  }
+
+  .dropdown-content div:hover {
+    background-color: #f0f0f0;
+  }
+}

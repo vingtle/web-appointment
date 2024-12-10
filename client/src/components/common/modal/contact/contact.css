@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+#contact-dropdown {
+  position: relative;
+  display: inline-block;
+  font-family: "Lato", sans-serif;
+}
+
+.dropdown-title {
+  cursor: pointer;
+  color: #000;
+  font-weight: 500;
+  font-size: 1em;
+  background: none;
+  border: none;
+  transition:
+    color 0.3s ease,
+    border-bottom 0.3s ease;
+}
+
+.dropdown-title:hover {
+  color: #0891b2;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 250px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  /* Ensure above other elements */
+  border-radius: 5px;
+  padding: 15px;
+  transition: all 0.3s ease;
+}
+
+.dropdown-content.open {
+  display: block;
+  opacity: 1;
+}
+
+.dropdown-content.hidden {
+  display: none;
+  opacity: 0;
+}
+
+.dropdown-content h2 {
+  color: #0891b2;
+}
+
+.dropdown-content form label {
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.google-business-btn {
+  display: inline-block;
+  background-color: #0891b2;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 15px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.google-business-btn:hover {
+  background-color: #0891b2;
+}
+
+.small-text {
+  font-size: 0.85em;
+  color: gray;
+  margin-top: 10px;
+  line-height: 1.4;
+}

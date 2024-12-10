@@ -1,0 +1,78 @@
+.galleries-page {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.gallery-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.photo-upload-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.photo-upload-section input {
+  margin: 10px 0;
+}
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.photo-card {
+  position: relative;
+  text-align: center;
+}
+
+.photo-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.upload-btn {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.upload-btn:hover {
+  background-color: #0056b3;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Responsive - Tablet */
+@media screen and (max-width: 1060px) {
+  .gallery-title {
+    font-size: 2rem;
+  }
+
+  .photo-gallery {
+    gap: 15px;
+  }
+}
+
+/* Responsive - Mobile */
+@media screen and (max-width: 600px) {
+  .gallery-title {
+    font-size: 1.5rem;
+  }
+
+  .upload-btn {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+}

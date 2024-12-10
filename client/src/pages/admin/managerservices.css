@@ -1,0 +1,79 @@
+.admin-advanced-skin-care {
+  font-family: "Lato", sans-serif;
+  padding: 20px;
+}
+
+h1 {
+  color: #012831;
+}
+
+.add-treatment,
+.treatment-list {
+  margin-bottom: 20px;
+}
+
+.add-treatment input,
+.add-treatment textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.add-treatment button {
+  padding: 10px 20px;
+  background-color: #0891b2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-treatment button:hover {
+  background-color: #065f73;
+}
+
+.treatment-card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.treatment-card h4 {
+  margin-bottom: 5px;
+  color: #012831;
+}
+
+.treatment-card p {
+  margin: 5px 0;
+}
+
+.treatment-card button {
+  margin-right: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.treatment-card button:first-child {
+  background-color: #0891b2;
+  color: white;
+}
+
+.treatment-card button:first-child:hover {
+  background-color: #065f73;
+}
+
+.treatment-card button:last-child {
+  background-color: #d32f2f;
+  color: white;
+}
+
+.treatment-card button:last-child:hover {
+  background-color: #b71c1c;
+}
