@@ -6,17 +6,16 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
+  color: white;
 }
 
-.footer-content.sticky {
+.footer-content {
   padding-right: 30%;
   padding-top: 2%;
 }
-
 .footer-links {
   padding-top: 2%;
 }
-
 .footer-copyright {
   padding-left: 40%;
   font-size: 0.8em;
@@ -130,6 +129,7 @@ h3:hover {
   font-size: 65%;
 }
 
+/* Responsive Design */
 @media screen and (max-width: 1060px) {
   #footer.footer {
     flex-direction: column;
@@ -143,5 +143,43 @@ h3:hover {
 
   .footer-links {
     width: 100%;
+  }
+
+  .footer-links ul {
+    padding-inline-start: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #footer {
+    padding: 0;
+    display: flex;
+    padding: 5px 0px;
+  }
+  
+  .footer-content {
+    padding-right: 0;
+    padding-top: 0;
+  
+  }
+  .footer, p {
+    margin-top: 0;
+    padding-bottom: 0;
+  }
+  .footer-links {
+    padding-top: 0;
+    
+  }
+  .footer-links ul {
+    padding-top: 0;
+  }
+  .footer-links li {
+    margin-bottom: 8px;
+  }
+  .footer-copyright {
+    padding-left: 0;
+  }
+  .footer-icon {
+    margin-left: 0px;
   }
 }
