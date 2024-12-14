@@ -1,0 +1,61 @@
+/* Default Styles for TreatmentCard */
+.treatment-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .treatment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .treatment-card h3 {
+    font-size: 1.2rem;
+    color: #012831;
+    margin-bottom: 10px;
+  }
+  
+  .treatment-card p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Responsive Styles */
+  
+  /* For screen widths less than or equal to 1060px */
+  @media screen and (max-width: 1060px) {
+    .treatment-card {
+      padding: 15px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+  
+    .treatment-card h3 {
+      font-size: 1rem;
+    }
+  
+    .treatment-card p {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* For screen widths less than or equal to 600px */
+  @media screen and (max-width: 600px) {
+    .treatment-card {
+      padding: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  
+    .treatment-card h3 {
+      font-size: 0.9rem;
+    }
+  
+    .treatment-card p {
+      font-size: 0.8rem;
+    }
+  }
+  

@@ -1,5 +1,6 @@
 // Load environment variables from .env file
 require("dotenv").config();
+console.log(process.env.APP_SECRET);
 
 const credentials = require("./app/credentials");
 // Check database connection

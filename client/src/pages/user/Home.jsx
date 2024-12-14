@@ -5,7 +5,6 @@ import "./home.css";
 
 function Home() {
   const navigate = useNavigate();
-
   const treatmentCategories = [
     {
       id: 1,

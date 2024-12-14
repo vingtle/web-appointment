@@ -9,7 +9,7 @@ router.use(authenticate); // Protect all admin routes
 router.use(isAdmin);
 
 router.get("/", treatmentActions.getAllTreatments);
-router.get("/category", treatmentActions.getTreatmentsByCategory);
+router.get("/category",authenticate, treatmentActions.getTreatmentsByCategory);
 router.post("/", treatmentActions.addTreatment);
 router.put("/:id", treatmentActions.updateTreatment);
 router.delete("/:id", treatmentActions.deleteTreatment);

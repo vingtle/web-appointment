@@ -19,21 +19,24 @@
 }
 
 .photo-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
 }
 
 .photo-card {
-  position: relative;
+  border: 1px solid #ddd;
+  padding: 10px;
   text-align: center;
 }
 
 .photo-image {
   width: 100%;
   height: auto;
-  border-radius: 5px;
+  max-width: 200px;
 }
+
 
 .upload-btn {
   padding: 10px;

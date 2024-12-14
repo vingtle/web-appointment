@@ -4,7 +4,10 @@ import WaxModal from "../WaxModal";
 
 const FaceWax = ({ onClose }) => {
   return (
-    <WaxModal category="facewax" title="Face Wax Options" onClose={onClose} />
+    <WaxModal 
+    category="facewax" 
+    title="Face Wax Options" 
+    onClose={onClose} />
   );
 };
 

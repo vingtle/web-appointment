@@ -5,6 +5,7 @@ const treatmentsRoutes = require("./treatments/router"); // Adjusted to relative
 
 const userRoutes = require("./user/router");
 
+const photosRoutes = require("./gallery/router");
 
 // Health check route (should be defined early for quick response)
 router.get("/", (req, res) => {
@@ -15,6 +16,8 @@ router.get("/", (req, res) => {
 router.use("/treatments", treatmentsRoutes);
 
 router.use("/user", userRoutes);
+
+router.use("/photo", photosRoutes);
 
 // Catch-all route for undefined paths
 router.use((req, res) => {

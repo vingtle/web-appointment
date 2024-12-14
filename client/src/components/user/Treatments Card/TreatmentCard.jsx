@@ -6,29 +6,36 @@ import Massages from "../TreatmentsCategory/Massages";
 import Waxing from "../TreatmentsCategory/Waxing";
 import ManicuresPedicures from "../TreatmentsCategory/ManicuresPedicures";
 import Eyelash from "../TreatmentsCategory/Eyelash";
+import "./treatmentscard.css";
 
-const TreatmentCard = () => {
+const TreatmentsCard = () => {
   const { treatmentCategory } = useParams();
+  console.log("Treatment Category from URL:", treatmentCategory);
+
 
   const renderCard = () => {
-    switch (treatmentCategory) {
-      case "advanced-skin-care":
-        return <AdvancedSkinCare />;
-      case "waxing":
-        return <Waxing />;
-      case "hair-scalp-care": // Corrected spelling
-        return <LuxuryHair />;
-      case "massages":
-        return <Massages />;
-      case "manicures-pedicures":
-        return <ManicuresPedicures />;
-      case "eyelash-extensions-lifts": // Ensure consistency with `Home.jsx`
-        return <Eyelash />;
-      default:
-        return <div>Unknown Treatment</div>; // Enhanced default case
-    }
-  };
-  return <div id="treatment-card">{renderCard()}</div>;
+  if (!treatmentCategory) {
+    return <div>Please select a valid treatment category.</div>;
+  }
+  switch (treatmentCategory) {
+    case "advanced-skin-care":
+      return <AdvancedSkinCare />;
+    case "waxing":
+      return <Waxing />;
+    case "hair-scalp-care":
+      return <LuxuryHair />;
+    case "massages":
+      return <Massages />;
+    case "manicures-pedicures":
+      return <ManicuresPedicures />;
+    case "eyelash-extensions-lifts":
+      return <Eyelash />;
+    default:
+      return <div>Unknown Treatment</div>;
+  }
 };
 
-export default TreatmentCard;
+  return <div id="treatment-card-container">{renderCard()}</div>;
+};
+
+export default TreatmentsCard;

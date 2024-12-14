@@ -1,4 +1,5 @@
-import React, { useState, useNavigate } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./signupform.css";
 
@@ -10,34 +11,41 @@ const SignUpForm = () => {
     phone_number: "",
     name: "",
   });
+  const [error, setError] = useState("");
 
+  // Update form state on input change
   const handleChange = (e) => {
     const { name, value } = e.target;
+    console.log("Input change detected: ", { name, value }); // Log input changes
     setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+    console.log("Current location after submit:", window.location.pathname);
+  };  
 
+  // Handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevent default form submission behavior
+
     try {
-      const response = await axios.post("/api/auth/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      if (response.ok) {
+      const response = await axios.post("/auth/signup", formData);
+
+      if (response.status === 201) {
         alert("Signup successful! You can now log in.");
-        navigate("/loginpage");
+        navigate("/loginpage"); // Redirect to login page after signup
       } else {
-        alert("Sigup failed!");
+        setError("Signup failed. Please try again.");
       }
     } catch (error) {
       console.error("Signup failed:", error);
+      setError("An error occurred during signup. Please try again.");
     }
+    console.log("Current location:", window.location.pathname);
+    navigate("/loginpage"); 
   };
 
   return (
     <div className="signup-form">
       <h2>Sign Up</h2>
+      {error && <div className="error-message">{error}</div>}
       <form onSubmit={handleSubmit}>
         <label>
           Name:
@@ -45,7 +53,7 @@ const SignUpForm = () => {
             type="text"
             name="name"
             value={formData.name}
-            onChange={handleChange}
+            onChange={handleChange} // Update state when typing
             required
           />
         </label>
@@ -55,7 +63,7 @@ const SignUpForm = () => {
             type="email"
             name="email"
             value={formData.email}
-            onChange={handleChange}
+            onChange={handleChange} // Update state when typing
             required
           />
         </label>
@@ -65,7 +73,7 @@ const SignUpForm = () => {
             type="password"
             name="password"
             value={formData.password}
-            onChange={handleChange}
+            onChange={handleChange} // Update state when typing
             required
           />
         </label>
@@ -75,7 +83,7 @@ const SignUpForm = () => {
             type="text"
             name="phone_number"
             value={formData.phone_number}
-            onChange={handleChange}
+            onChange={handleChange} // Update state when typing
           />
         </label>
         <button type="submit">Sign Up</button>

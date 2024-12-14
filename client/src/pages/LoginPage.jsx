@@ -13,24 +13,28 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle login logic
     try {
       const response = await fetch("/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
+
       if (response.ok) {
         const data = await response.json();
-        localStorage.setItem("token", data.token); // Save token to localStorage
+        localStorage.setItem("authToken", data.token); // Save token to localStorage
         navigate("/myprofile"); // Redirect to MyProfile after successful login
+      } else if (response.status === 401) {
+        alert("Invalid login credentials.");
       } else {
-        alert("Invalid login credentials");
+        alert("An error occurred. Please try again later.");
       }
     } catch (error) {
       console.error("Login failed:", error);
+      alert("Unable to connect to the server. Please try again later.");
     }
   };
+
   const handleGoogleLogin = () => {
     window.location.href = "http://localhost:3000/api/auth/google";
   };

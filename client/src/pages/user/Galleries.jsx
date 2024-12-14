@@ -11,24 +11,28 @@ const Galleries = () => {
     fetchPhotos();
   }, []);
 
+  // Fetch all photos from the backend
   const fetchPhotos = async () => {
     try {
-      const response = await axios.get("/api/photos");
+      const response = await axios.get("/gallery/photos");
       if (Array.isArray(response.data)) {
         setPhotos(response.data);
       } else {
         setPhotos([]);
       }
-    } catch {
+    } catch (error) {
+      console.error("Error fetching photos:", error);
       setPhotos([]);
       setError("Failed to load photos. Please try again later.");
     }
   };
 
+  // Handle file selection
   const handleFileChange = (event) => {
     setNewPhoto(event.target.files[0]);
   };
 
+  // Upload a new photo
   const handleUploadPhoto = async () => {
     if (!newPhoto) {
       setError("Please select a photo to upload.");
@@ -39,20 +43,23 @@ const Galleries = () => {
     formData.append("photo", newPhoto);
 
     try {
-      const response = await axios.post("/api/upload", formData);
-      setPhotos([...photos, response.data]);
+      const response = await axios.post("/gallery/upload", formData);
+      setPhotos([...photos, response.data]); // Add the new photo to the list
       setNewPhoto(null);
       setError("");
-    } catch {
+    } catch (error) {
+      console.error("Error uploading photo:", error);
       setError("Failed to upload photo.");
     }
   };
 
+  // Delete a photo by ID
   const handleDeletePhoto = async (photoId) => {
     try {
-      await axios.delete(`/api/photos/${photoId}`);
+      await axios.delete(`/api/gallery/photos/${photoId}`);
       setPhotos(photos.filter((photo) => photo.id !== photoId));
-    } catch {
+    } catch (error) {
+      console.error("Error deleting photo:", error);
       setError("Failed to delete photo.");
     }
   };
